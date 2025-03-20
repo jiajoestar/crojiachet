@@ -1,0 +1,347 @@
+/* global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+  }
+  
+  body {
+    background-size: cover; /* or 'contain' if you want to see the whole design */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #F9F1E5;
+    color: #333;
+  }
+  
+  /* header */
+  header {
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #999;
+  }
+
+  .logo {
+    height: 100px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* hero section */
+  .hero {
+    height: 80vh;
+    background: url('images/floral\ background.png') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #3f1616;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fa9db3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #f77d99;
+  }
+  
+  /* product grid */
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s ease;
+    object-fit: cover;
+  }
+  
+  .product h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .product p {
+    color: #999;
+    font-size: 1rem;
+  }
+  
+  
+  
+  /* footer */
+  footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #666;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* about */
+  .about {
+    height: 40vh;
+    background: url('images/floral\ background.png') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #3f1616;
+    text-align: center;
+  }
+
+  .about h1 {
+    font-size: 3rem;
+  }
+
+  .about-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #3f1616;
+  }
+
+  /* product pages */
+  .product-page {
+    display: flex;
+    margin: 20px;
+    color: #3f1616;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .product-images {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 300px;
+  }
+
+  .product-details {
+    flex: 1;
+  }
+
+  .product-details h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    min-width: 300px;
+  }
+
+  .product-details h3 {
+    font-size: 26px;
+  }
+
+  .product-details h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* slideshow container */
+  .slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  /* individual slides */
+  .slide {
+    display: none;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* navigation arrows */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    color: #3f1616;
+    background-color: #f8f8f8;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: #f7c3cf;
+  }
+
+  .dots-container {
+    margin-top: 20px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #717171;
+  }
+
+  .fade {
+    animation: fadeEffect 0.5s ease;
+  }
+
+  .dot:hover {
+    background-color: #555;
+  }
+
+  @keyframes fadeEffect {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* product slideshow on homepage */
+  /*
+  .product-slideshow {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .slide {
+    flex: 0 0 auto;
+    width: 80%;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    position: relative;
+  }
+  
+  .product-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .product-info h3,
+  .product-info p {
+    margin: 0;
+  }
+  */
+  
+
+
+  
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .logo {
+        height: 40px;
+        width: 100px; /* Smaller size on smaller screens */
+    }
+
+    .product img {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 150px; /* Keeps it from getting too large */
+    }
+
+    .product-page {
+        flex-direction: column;
+    }
+
+    .slideshow-container {
+      max-width: 100%;
+    }
+}
+  
+  
