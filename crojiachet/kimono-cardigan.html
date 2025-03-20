@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>kimono cardigan</title>
+        <link rel="icon" type="image/x-icon" href="images/logo.png"/>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- addng custom fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- theme colour for mobile browsers; set the colour of the browser UI to match your brand -->
+        <meta name="theme-color" content="#ff6600">
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="logo-container">
+                    <a href="home.html"><img src="images/logo.png" alt="crojiachet logo" class="logo"></a>
+                    <span class="brand-name">crojiachet</span>
+                </div>
+                <ul class="nav-links">
+                  <li><a href="shop.html">shop</a></li>
+                  <li><a href="collections.html">collections</a></li>
+                  <li><a href="about.html">about</a></li>
+                  <li><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="product-page">
+
+                <div class="slideshow-container">
+                    <!-- slide 1 -->
+                    <div class="slide fade">
+                        <img src="images/cherry blossom placeholder.avif" alt="kimono cardigan 1">
+                    </div>
+
+                    <!-- slide 2 -->
+                    <div class="slide fade">
+                        <img src="images/cherry blossom placeholder.avif" alt="kimono cardigan 2">
+                    </div>
+
+                    <!-- slide 3 -->
+                    <div class="slide fade">
+                        <img src="images/cherry blossom placeholder.avif" alt="kimono cardigan 3">
+                    </div>
+
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+                    <div class="dots-container">
+                        <span class="dot" onclick="setSlide(1)"></span>
+                        <span class="dot" onclick="setSlide(2)"></span>
+                        <span class="dot" onclick="setSlide(3)"></span>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1>kimono cardigan</h1>
+                    <h3>£30</h3>
+                    <br>
+                    <p>boxy, comfy and casual with bows to tie it together</p>
+                    <br><br>
+                    <h4>standard dimensions</h4>
+                    <p>• length: 170cm</p>
+                    <p>• width: 27cm</p>
+                    <br>
+                    <p>can be customised to whatever dimensions you would like :)</p>
+                    <br><br><br>
+                    <h4>product information</h4>
+                    <p>• made with 100% acrylic yarn</p>
+                    <p>• hand-wash only</p>
+                    <p>• colours and sizes are completely customizable, please dm
+                        me on what you would like!
+                    </p>
+                    <br><br><br>
+                    <h4>shipping information</h4>
+                    <p>• shipping is included in the price</p>
+                    <p>• tracked 48hr delivery by royal mail</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- footer -->
+        <footer>
+            <p>&copy; 2025 crojiachet. all rights reserved.</p>
+        </footer>
+
+        <!-- javascript -->
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // go to next/previous slide
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        // go to specific slide
+        function setSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+        
+            if (n > slides.length) { 
+            slideIndex = 1;
+            }
+            if (n < 1) { 
+            slideIndex = slides.length;
+            }
+        
+            // hide all slides
+            for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            }
+        
+            // remove "active" class from all dots
+            for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+        
+            // display current slide and highlight the dot
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        
+    </body>
+    
+
+</html>
