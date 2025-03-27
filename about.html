@@ -29,14 +29,28 @@
                 <ul class="nav-links">
                   <li><a href="shop.html">shop</a></li>
                   <li><a href="collections.html">collections</a></li>
+                  <li><a href="how-to-order.html">how to order</a></li>
                   <li><a href="about.html">about</a></li>
                   <li><a href="contact.html">contact</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+            <!-- mobile sidebar menu -->
+            <div class="sidebar" id="sidebar">
+                <button class="close-btn" onclick="toggleSidebar()">✖</button>
+                <a href="shop.html">shop</a>
+                <a href="collections.html">collections</a>
+                <a href="how-to-order.html">how to order</a>
+                <a href="about.html">about</a>
+                <a href="contact.html">contact</a>
+            </div>
+
         </header>
 
         <!-- hero section -->
-        <section class="about">
+        <section class="other-hero">
             <h1>crojiachet</h1>
         </section>
 
@@ -83,7 +97,21 @@
             <p>&copy; 2025 crojiachet. all rights reserved.</p>
         </footer>
 
-        <script src="script.js"></script>
+        <!-- javascript for sidebar menu -->
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+        
+            // close sidebar when clicking outside
+            document.addEventListener('click', (event) => {
+                const sidebar = document.getElementById('sidebar');
+                if (!sidebar.contains(event.target) && !event.target.matches('.hamburger')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        </script>
         
     </body>
     

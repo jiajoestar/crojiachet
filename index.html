@@ -29,11 +29,25 @@
                 <ul class="nav-links">
                   <li><a href="shop.html">shop</a></li>
                   <li><a href="collections.html">collections</a></li>
+                  <li><a href="how-to-order.html">how to order</a></li>
                   <li><a href="about.html">about</a></li>
                   <li><a href="contact.html">contact</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+            <!-- mobile sidebar menu -->
+            <div class="sidebar" id="sidebar">
+                <button class="close-btn" onclick="toggleSidebar()">✖</button>
+                <a href="shop.html">shop</a>
+                <a href="collections.html">collections</a>
+                <a href="how-to-order.html">how to order</a>
+                <a href="about.html">about</a>
+                <a href="contact.html">contact</a>
+            </div>
         </header>
+
 
         <!-- hero section -->
         <section class="hero">
@@ -41,37 +55,28 @@
             <a href="shop.html" class="cta-button">browse</a>
         </section>
 
-        <!-- product grid -->
-        <section class="product-grid">
-            <div class="product">
-            <a href="flower-lace-jumper.html"><img src="images/cherry blossom placeholder.avif" alt="flower lace jumper"></a>
-            <h2>flower lace jumper</h2>
-            <p>£30</p>
-            </div>
-            <div class="product">
-            <a href="kimono-cardigan.html"><img src="images/cherry blossom placeholder.avif" alt="kimono cardigan"></a>
-            <h2>kimono cardigan</h2>
-            <p>£30</p>
-            </div>
-            <div class="product">
-            <a href="fairbrook-scarf.html"><img src="images/cherry blossom placeholder.avif" alt="fairbrook scarf"></a>
-            <h2>fairbrook scarf</h2>
-            <p>£15</p>
-            </div>
-        </section>
-
         <!-- product slideshow -->
-        <!--
-        <div class="product-slideshow">
-            <div class="slide">
-                <a href="flower-lace-jumper.html"><img src="images/cherry blossom placeholder.avif" alt="flower lace jumper"></a>
+        <div class="heading-lol">
+            <h2>new products</h2>
+        </div>
+        <div class="product-slideshow-container">
+            <div class="product-slide">
+                <a href="sunflower-lace-jumper.html"><img src="images/sunflower lace jumper 2 cropped.jpg" alt="sunflower lace jumper"></a>
+                <div class="product-info">
+                    <h2>sunflower lace jumper</h2>
+                    <p>£30</p>
+                </div>
+            </div>
+
+            <div class="product-slide">
+                <a href="flower-lace-jumper.html"><img src="images/flower lace jumper (modelled by amira).jpg" alt="flower lace jumper"></a>
                 <div class="product-info">
                     <h2>flower lace jumper</h2>
                     <p>£30</p>
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="product-slide">
                 <a href="kimono-cardigan.html"><img src="images/cherry blossom placeholder.avif" alt="kimono cardigan"></a>
                 <div class="product-info">
                     <h2>kimono cardigan</h2>
@@ -79,57 +84,37 @@
                 </div>
             </div>
 
-            <div class="slide">
-                <a href="fairbrook-scarf.html"><img src="images/cherry blossom placeholder.avif" alt="fairbrook scarf"></a>
+            <div class="product-slide">
+                <a href="fairbrook-scarf.html"><img src="images/fairbrook scarf modelled 1.jpg" alt="fairbrook scarf"></a>
                 <div class="product-info">
                     <h2>fairbrook scarf</h2>
                     <p>£15</p>
                 </div>
             </div>
         </div>
-        -->
+        
+        <div class="">
 
         <!-- footer -->
         <footer>
             <p>&copy; 2025 crojiachet. all rights reserved.</p>
         </footer>
 
-        <!-- javascript -->
-        <!--
+        <!-- javascript for sidebar menu -->
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const slideshow = document.querySelector('.product-slideshow');
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-            
-                slideshow.addEventListener('mousedown', (e) => {
-                isDown = true;
-                slideshow.classList.add('active');
-                startX = e.pageX - slideshow.offsetLeft;
-                scrollLeft = slideshow.scrollLeft;
-                });
-            
-                slideshow.addEventListener('mouseleave', () => {
-                isDown = false;
-                slideshow.classList.remove('active');
-                });
-            
-                slideshow.addEventListener('mouseup', () => {
-                isDown = false;
-                slideshow.classList.remove('active');
-                });
-            
-                slideshow.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - slideshow.offsetLeft;
-                const walk = (x - startX) * 3; //scroll-fast
-                slideshow.scrollLeft = scrollLeft - walk;
-                });
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+        
+            // close sidebar when clicking outside
+            document.addEventListener('click', (event) => {
+                const sidebar = document.getElementById('sidebar');
+                if (!sidebar.contains(event.target) && !event.target.matches('.hamburger')) {
+                    sidebar.classList.remove('active');
+                }
             });
         </script>
-        -->
         
     </body>
     

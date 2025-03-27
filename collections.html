@@ -29,15 +29,40 @@
                 <ul class="nav-links">
                   <li><a href="shop.html">shop</a></li>
                   <li><a href="collections.html">collections</a></li>
+                  <li><a href="how-to-order.html">how to order</a></li>
                   <li><a href="about.html">about</a></li>
                   <li><a href="contact.html">contact</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+            <!-- mobile sidebar menu -->
+            <div class="sidebar" id="sidebar">
+                <button class="close-btn" onclick="toggleSidebar()">✖</button>
+                <a href="shop.html">shop</a>
+                <a href="collections.html">collections</a>
+                <a href="how-to-order.html">how to order</a>
+                <a href="about.html">about</a>
+                <a href="contact.html">contact</a>
+            </div>
+
         </header>
 
         <!-- hero section -->
-        <section class="hero">
-            <h1>nothing to see here yet !</h1>
+        <section class="other-hero">
+            <h1>collections</h1>
+        </section>
+
+        <section class="product-grid">
+            <div class="product">
+            <a href="clothes.html"><img src="images/sunflower lace jumper 2.jpg" alt="clothes"></a>
+            <h2>clothes</h2>
+            </div>
+            <div class="product">
+            <a href="accessories.html"><img src="images/fairbrook scarf with background.jpg" alt="accessories"></a>
+            <h2>accessories</h2>
+            </div>
         </section>
 
         <!-- footer -->
@@ -45,7 +70,21 @@
             <p>&copy; 2025 crojiachet. all rights reserved.</p>
         </footer>
 
-        <script src="script.js"></script>
+        <!-- javascript for sidebar menu -->
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+        
+            // close sidebar when clicking outside
+            document.addEventListener('click', (event) => {
+                const sidebar = document.getElementById('sidebar');
+                if (!sidebar.contains(event.target) && !event.target.matches('.hamburger')) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        </script>
         
     </body>
     
