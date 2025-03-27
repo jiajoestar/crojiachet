@@ -407,6 +407,10 @@
 
 @media (max-width: 768px) {
 
+  body {
+    background-color: #f7c3cf;
+  }
+
   .hero {
     padding-left: 15px;
     padding-right: 15px;
@@ -428,7 +432,6 @@
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-    
   }
   
   .logo {
