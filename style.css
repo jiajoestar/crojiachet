@@ -474,10 +474,10 @@
     padding: 30px;
   }
 
-  .product-details {
-    
-  }
-
 }
-  
 
+@media (prefers-color-scheme: dark) {
+  body {
+      background-color: #f7e5e4 !important; /* matches original light mode color */
+  }
+}
