@@ -16,7 +16,7 @@
     background-size: cover; /* or 'contain' if you want to see the whole design */
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #f7e5e4;
+    background-color: #f7e5e4 !important;
     color: #333;
   }
   
